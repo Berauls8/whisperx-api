@@ -59,10 +59,17 @@ Ensure RabbitMQ is running before starting the application.
 
 Create a `.env` file in your project root with:
 
-```env
-HUGGING_FACE_TOKEN=your_hugging_face_token
-API_PORT=11300
-```
+| Variable                 | Default                               | Description |
+|--------------------------|---------------------------------------|-------------|
+| `HUGGING_FACE_TOKEN`     | ``                                    | Your https://huggingface.co/ token used for diarization. See https://github.com/m-bain/whisperX?tab=readme-ov-file#speaker-diarization |
+| `API_PORT`               | `11300`                               | Server port |
+| `API_HOST`               | `0.0.0.0`                             | Server bind address |
+| `RABBIT_MQ_URI`          | `amqp://guest:guest@localhost:5672//` | URL to your broker |
+| `FFMPEG_BIN`             | `ffmpeg`                              | Path to the `ffmpeg` binary |
+| `FFPROBE_BIN`            | `ffprobe`                             | Path to the `ffprobe` binary |
+| `WHISPERX_API_DATA_PATH` | `./data`                              | Path where `whisperx-api` stores its data |
+| `WHISPERX_API_TEMP_PATH` | `./temp`                              | Path where `whisperx-api` stores temp data |
+| `WHISPERX_CPU_ONLY`      | `False`                               | If `True` use CPU only version of `whisperx` |
 
 ## Running the Application
 
